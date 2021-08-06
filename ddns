@@ -1,0 +1,17 @@
+mkdir /root/ddns && cd /root/ddns
+
+#rm /root/ddns/ipip.sh
+vim ipip.sh
+
+#rm /root/ddns/nginx.sh
+vim nginx.sh
+
+#rm /root/ddns/ping.sh
+vim ping.sh
+
+chmod +x ipip.sh nginx.sh ping.sh
+
+
+crontab -e
+
+*/5 * * * * /root/ddns/ping.sh >/dev/null 2>&1
